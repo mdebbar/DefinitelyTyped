@@ -743,3 +743,12 @@ class RenderChildren extends React.Component {
         return children !== undefined ? children : null;
     }
 }
+
+// React 16 stateless component should be able to render children directly
+const SFCChildren16: React.SFC = props => props.children;
+
+// React 16 stateless component should be able to render a string
+const SFCStr16: React.SFC = props => 'foo';
+
+// React 16 stateless component should be able to render an array
+const SFCArr16: React.SFC = props => ['foo', 123, React.createElement("div", null)];
